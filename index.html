@@ -15,9 +15,9 @@
         <script type="text/javascript">
             textareaChar($('textarea'),200,$('span'));
             
-            function textareaChar(obje,maxChar,countText)
+            function textareaChar(object,maxChar,countText)
             {
-                obje.on('keydown keyup keypress change',function ()
+                object.on('keydown keyup keypress change',function ()
                 {
                     if( $( this ).val().length >= maxChar )
                     {
