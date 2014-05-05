@@ -1,4 +1,4 @@
-textareaMaxChar
+Max characters and keywords
 ===============
 
 
