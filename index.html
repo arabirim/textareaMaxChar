@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="tr">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="ROBOTS" content="FOLLOW, INDEX"/>
-        <title>textarea max char</title>
-        <style type="text/css">
-            .col{width: 50%; float: left;}
-            textarea{height: 160px;}
-        </style>
-    </head>
-    <body>
-        <div class='col'>
-            <h1>Max Char</h1>
-            <p>
-                textareaChar( $( 'textarea.maxChar' ), 200, $( 'span.maxChar' ) );
-            </p>
-            <textarea class='maxChar'></textarea>
-            <span class='maxChar'></span>
-        </div>
-        <div class='col'>
-            <h1>Max Keywords</h1>
-            <p>
-                textareaMaxKeywords( $( 'textarea.maxKeywords' ), 20 ,$( 'span.maxKeywords' ) );
-            </p>
-            <textarea class='maxKeywords'></textarea>
-            <span class='maxKeywords'></span>
-        </div>
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>      
-        <script type="text/javascript">
-            
-            textareaMaxChar( $('textarea.maxChar'),200, $('span.maxChar'));
-            
-            textareaMaxKeywords($('textarea.maxKeywords'),10,$('span.maxKeywords'));
-            
-            function textareaMaxChar(obje, maxChar, countText)
-            {
-                obje.on('keydown keyup keypress change',function ()
-                {
-                    if( $( this ).val().length >= maxChar )
-                    {
-                        $( this ).val( $( this ).val().substr(0,maxChar));
-                    } 
-                    countText.html( $( this ).val().length + ' Characters');
-                });
-            }
-            
-            function textareaMaxKeywords(obje, maxKeywords, countText)
-            {
-                obje.on('keydown keyup keypress change',function ()
-                {
-                    if( $( this ).val().split(' ').length >= maxKeywords )
-                    {
-                        $( this ).val( $( this ).val().split(' ').slice(0, maxKeywords, ' ').join( ' ' ) );
-                    } 
-                    countText.html( $( this ).val().split( ' ' ).length + ' keywords');
-                });
-            }
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="tr">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <meta name="ROBOTS" content="FOLLOW, INDEX"/>
+            <title>textarea max characters and  keywords</title>
+            <style type="text/css">
+                .col{width: 50%; float: left;}
+                textarea{height: 160px;}
+            </style>
+        </head>
+        <body>
+            <div class='col'>
+                <h1>Max Characters</h1>
+                <p>
+                    textareaChar( $( 'textarea.maxChar' ), 200, $( 'span.maxChar' ) );
+                </p>
+                <textarea class='maxChar'></textarea>
+                <span class='maxChar'></span>
+            </div>
+            <div class='col'>
+                <h1>Max Keywords</h1>
+                <p>
+                    textareaMaxKeywords( $( 'textarea.maxKeywords' ), 20 ,$( 'span.maxKeywords' ) );
+                </p>
+                <textarea class='maxKeywords'></textarea>
+                <span class='maxKeywords'></span>
+            </div>
+            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>      
+            <script type="text/javascript">
 
-        </script>
-    </body>
-</html>
+                textareaMaxChar( $('textarea.maxChar'),200, $('span.maxChar'));
+
+                textareaMaxKeywords($('textarea.maxKeywords'),10,$('span.maxKeywords'));
+
+                function textareaMaxChar(obje, maxChar, countText)
+                {
+                    obje.on('keydown keyup keypress change',function ()
+                    {
+                        if( $( this ).val().length >= maxChar )
+                        {
+                            $( this ).val( $( this ).val().substr(0,maxChar));
+                        } 
+                        countText.html( $( this ).val().length + ' Characters');
+                    });
+                }
+
+                function textareaMaxKeywords(obje, maxKeywords, countText)
+                {
+                    obje.on('keydown keyup keypress change',function ()
+                    {
+                        if( $( this ).val().split(' ').length >= maxKeywords )
+                        {
+                            $( this ).val( $( this ).val().split(' ').slice(0, maxKeywords, ' ').join( ' ' ) );
+                        } 
+                        countText.html( $( this ).val().split( ' ' ).length + ' keywords');
+                    });
+                }
+
+            </script>
+        </body>
+    </html>
