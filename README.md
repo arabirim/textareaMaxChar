@@ -5,7 +5,7 @@ textareaMaxChar
 Max characters
 --------------
 
-textareaChar( $( 'textarea.maxCharacters' ), 200, $( 'span.maxCharacters' ) );
+textareaMaxCharacters( $( 'textarea.maxCharacters' ), 200, $( 'span.maxCharacters' ) );
 
 
 Max keywords
