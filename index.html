@@ -53,7 +53,7 @@
                         {
                             $( this ).val( $( this ).val().split(' ').slice(0, maxKeywords).join( ' ' ) );
                         } 
-                        countText.html( $( this ).val().split( ' ' ).length + ' keywords');
+                        countText.html( $.trim( $( this ).val() ).split( ' ' ).length + ' keywords');
                     });
                 }
 
